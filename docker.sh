@@ -20,13 +20,9 @@ bumo_container=$app-dev
 
 # container dir
 project_docker_bumo_path="$project_docker_path/bumo"
-project_docker_runtime_dir="$project_docker_path/runtime"           # app runtime
-project_docker_persistent_dir="$project_docker_path/persistent"     # app persistent
 
 #---------- bumo container ------------#
 source $project_docker_path/bumo/container.sh
-
-
 
 function run()
 {
