@@ -1,0 +1,29 @@
+{
+  "name": "armors-bumo-node",
+  "version": "1.0.0",
+  "description": "node for bumo framework",
+  "main": "index.js",
+  "dependencies": {
+    "bumo-sdk": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bumo": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoseadevops/bumo-audit.git"
+  },
+  "keywords": [
+    "bumo",
+    "node",
+    "docker"
+  ],
+  "author": "Hosea <hoseadevops@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoseadevops/bumo-audit/issues"
+  },
+  "homepage": "https://github.com/hoseadevops/bumo-audit#readme"
+}
