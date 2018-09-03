@@ -32,3 +32,5 @@ RUN cd ..
 RUN make
 
 RUN sed -i "s/sudo//g" /root/bumo/build/linux/MakeSupplement
+
+RUN make install
