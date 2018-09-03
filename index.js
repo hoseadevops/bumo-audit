@@ -15,3 +15,4 @@ sdk.account.getInfo(address).then( info => {
 }).catch(err => {
     console.log(err.message);
 });
+
