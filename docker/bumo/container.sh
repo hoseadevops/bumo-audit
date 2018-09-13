@@ -6,7 +6,7 @@ function _buchain()
 {
     if [ ! -d $project_docker_buchain_path ];then
 
-        docker run -d $args --name $bumo_container $bumo_image /bin/bash -c 'service bumo start service bumo start && while true; do sleep 50; done'
+        docker run -d $args --name $bumo_container $bumo_image /bin/bash -c 'service bumo start && while true; do sleep 50; done'
 
         docker cp $bumo_container:/usr/local/buchain $project_docker_buchain_path
 
