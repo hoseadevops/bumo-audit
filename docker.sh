@@ -13,7 +13,7 @@ app_basic_name=bumo
 app="$developer_name-$app_basic_name"
 
 # image
-bumo_image=hoseadevops/ubuntu-bumo:14.04-1.0.0.7
+bumo_image=hoseadevops/ubuntu-bumo:14.04-1.0.0.8
 
 # container
 bumo_container=$app-dev
@@ -26,7 +26,6 @@ source $project_docker_path/bumo/container.sh
 
 function run()
 {
-    _buchain
     run_bumo
 }
 

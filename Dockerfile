@@ -1,5 +1,5 @@
 # this dockerfile uses the bumo blockchian image
-# Version 0.1
+# Buchain Version 1.0.0.8
 
 FROM ubuntu:14.04
 
@@ -10,27 +10,12 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN apt-get update && apt-get install -y \
         vim \
         wget \
-        automake \
-        autoconf \
-        libtool \
-        g++ \
-        libssl-dev \
-        cmake \
-        libbz2-dev \
-        python \
-        unzip \
         && rm -rf /var/lib/apt/lists/*
 
-ADD . /root/bumo
+WORKDIR /root
 
-WORKDIR /root/bumo
+RUN wget -P /usr/local https://github.com/bumoproject/bumo/releases/download/1.0.0.8/buchain-1.0.0.8-linux-x64.tar.gz
 
-RUN cd build && ./install-build-deps-linux.sh
+RUN cd /usr/local && mkdir buchain-temp && tar xzvf buchain-1.0.0.8-linux-x64.tar.gz -C ./buchain-temp --strip-components 1 && rm -rf buchain-1.0.0.8-linux-x64.tar.gz
 
-RUN cd ..
-
-RUN make
-
-RUN sed -i "s/sudo//g" /root/bumo/build/linux/MakeSupplement
-
-RUN make install
+RUN cd /usr/local/buchain-temp/config && cp bumo-single.json bumo.json

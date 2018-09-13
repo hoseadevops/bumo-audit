@@ -8,7 +8,7 @@ function _buchain()
 
         docker run -d $args --name $bumo_container $bumo_image /bin/bash -c 'service bumo start && while true; do sleep 50; done'
 
-        docker cp $bumo_container:/usr/local/buchain $project_docker_buchain_path
+        docker cp $bumo_container:/usr/local/buchain-temp $project_docker_buchain_path
 
         rm -rf $project_docker_buchain_path/bin
         rm -rf $project_docker_buchain_path/scripts
@@ -20,11 +20,12 @@ function _buchain()
 
         echo "* \n!.gitignore" >> $project_docker_buchain_path/.gitignore
     fi
-
 }
 
 function run_bumo()
 {
+    _buchain
+
     local args='--privileged'
 
     args="$args -p 36002:36002 -p 36003:36003"
@@ -35,7 +36,7 @@ function run_bumo()
     args="$args -v $project_docker_buchain_path/jslib:/usr/local/buchain/jslib"
     args="$args -v $project_docker_buchain_path/log:/usr/local/buchain/log"
 
-    sub_cmd="service bumod start";
+    sub_cmd="cd /usr/local && \cp -rf buchain-temp/* buchain; rm -rf buchain-temp; ln -s /usr/local/buchain/scripts/bumo /etc/init.d/bumo; ln -s /usr/local/buchain/scripts/bumod /etc/init.d/bumod; service bumod start";
 
     run_cmd "docker run -d $args --name $bumo_container $bumo_image /bin/bash -c '$sub_cmd; while true; do sleep 50; done';"
 }
