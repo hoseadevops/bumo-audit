@@ -53,4 +53,15 @@ function send_cmd_to_bumo_container()
     run_cmd "docker exec -it $bumo_container bash -c '$cmd'"
 }
 
+function bumod()
+{
+    local cmd=$2
+    run_cmd "docker exec -it $bumo_container su -c 'service bumod $cmd'"
+}
+
+function bumo()
+{
+    local cmd=$2
+    run_cmd "docker exec -it $bumo_container su -c 'service bumo $cmd'"
+}
 

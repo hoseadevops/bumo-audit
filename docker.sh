@@ -45,10 +45,13 @@ cat <<EOF
         run
         clean
 
+        bumod
+        bumo
+
 EOF
 }
 
 action=${1:-help}
-ALL_COMMANDS="run clean bumod"
+ALL_COMMANDS="run clean bumod bumod bumo"
 list_contains ALL_COMMANDS "$action" || action=help
 $action "$@"
