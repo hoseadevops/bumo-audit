@@ -54,11 +54,15 @@ cat <<EOF
 
         bumod
         bumo
+
+        dropdb
+        bin
+
         log
 EOF
 }
 
 action=${1:-help}
-ALL_COMMANDS="run clean restart bumod bumo log"
+ALL_COMMANDS="run clean restart bumod bumo log dropdb bin"
 list_contains ALL_COMMANDS "$action" || action=help
 $action "$@"

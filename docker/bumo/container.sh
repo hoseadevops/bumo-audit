@@ -65,6 +65,17 @@ function bumo()
     run_cmd "docker exec -it $bumo_container su -c 'service bumo $cmd'"
 }
 
+function dropdb()
+{
+    run_cmd "docker exec -it $bumo_container su -c '/usr/local/buchain/bin/bumo --dropdb'"
+}
+
+function bin()
+{
+    local cmd=$2
+    run_cmd "docker exec -it $bumo_container su -c '/usr/local/buchain/bin/$cmd'"
+}
+
 function log()
 {
     tail -f $project_docker_path/buchain/log/*
