@@ -65,3 +65,8 @@ function bumo()
     run_cmd "docker exec -it $bumo_container su -c 'service bumo $cmd'"
 }
 
+function log()
+{
+    tail -f $project_docker_path/buchain/log/*
+}
+

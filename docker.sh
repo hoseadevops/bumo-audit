@@ -34,6 +34,12 @@ function clean()
     rm_bumo
 }
 
+function restart()
+{
+    clean
+    run
+}
+
 
 function help()
 {
@@ -44,14 +50,15 @@ cat <<EOF
 
         run
         clean
+        restart
 
         bumod
         bumo
-
+        log
 EOF
 }
 
 action=${1:-help}
-ALL_COMMANDS="run clean bumod bumod bumo"
+ALL_COMMANDS="run clean restart bumod bumo log"
 list_contains ALL_COMMANDS "$action" || action=help
 $action "$@"
