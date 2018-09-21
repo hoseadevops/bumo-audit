@@ -9,7 +9,7 @@ const options = {
 
 const sdk = new BumoSDK(options);
 
-const address = 'buQeAysTELzYpZSfXyzdFGP3BpYgNi2GUz4f';
+const address = 'buQs9npaCq9mNFZG18qu88ZcmXYqd6bqpTU3';
 
 // --------------------- 获取账号信息 ---------------------
 // sdk.account.getInfo(address).then( info => {
@@ -73,8 +73,25 @@ const address = 'buQeAysTELzYpZSfXyzdFGP3BpYgNi2GUz4f';
 
 // --------------------- 激活账户 ---------------------
 // var res = sdk.operation.accountActivateOperation({
-//     "destAddress":"buQeAysTELzYpZSfXyzdFGP3BpYgNi2GUz4f",
+//     "destAddress":"buQX9HbMhSZcHF62K2WtQAChQvcGHgy9jxNW",
 //     "initBalance":"1000000000000"
 // });
-//
-// console.log(res);
+//  console.log(res);
+
+
+// --------------------- 转账BU ---------------------
+// var res = sdk.operation.buSendOperation({
+//     "destAddress":"buQX9HbMhSZcHF62K2WtQAChQvcGHgy9jxNW",
+//     "buAmount":"100"
+// });
+//  console.log(res);
+
+
+// --------------------- 获取账户所有资产信息 ---------------------
+// const address_test = 'buQX9HbMhSZcHF62K2WtQAChQvcGHgy9jxNW';
+// sdk.account.getAssets(address_test).then(result => {
+//     console.log(result);
+// }).catch(err => {
+//     console.log(err.message);
+// });
+
