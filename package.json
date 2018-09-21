@@ -4,6 +4,7 @@
   "description": "node for bumo framework",
   "main": "index.js",
   "dependencies": {
+    "big-number": "^1.0.0",
     "bumo-sdk": "^2.1.0"
   },
   "devDependencies": {

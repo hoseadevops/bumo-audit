@@ -56,7 +56,7 @@ cat <<EOF
         bumo
 
         dropdb
-        bin
+        bin             demo: sh docker.sh bin 'bumo --create-account'
 
         log
 EOF
