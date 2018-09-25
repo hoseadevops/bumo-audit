@@ -1,13 +1,3 @@
-/*
-  Contract based Token template
-  OBSERVING CTP 1.0
-  
-STATEMENT:
-  Any organizations or individuals that intend to issue contract based token on BU chain,
-  should abide by Contractbased-Token-Protocol(ctp). Therefore, any contract that created
-  on BU chain including global attribute of ctp, we treat it as Contract based Token.
- */
-
 'use strict';
 
 let globalAttribute = {};

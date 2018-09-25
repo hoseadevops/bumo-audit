@@ -17,7 +17,8 @@
     "test": "mocha test",
     "bumo": "node index.js",
     "account" : "node module/account.js",
-    "transfer" : "node module/transfer.js"
+    "transfer" : "node module/transfer.js",
+    "contract" : "node module/contract.js"
   },
   "repository": {
     "type": "git",
